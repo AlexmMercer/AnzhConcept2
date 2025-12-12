@@ -1,0 +1,88 @@
+:root {
+  /* Слой 1: Стол (фон сайта) */
+  --bg-desk: #F7F3EC;
+
+  /* Слой 2: Папка */
+  --bg-folder: #FFFCF9;
+  --folder-spine: #E7E0D4;
+  --folder-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+
+  /* Слой 3: Листы */
+  --bg-sheet: #FFFFFF;
+  --sheet-border: #E4DDCF;
+  --sheet-shadow: 0 8px 16px rgba(0, 0, 0, 0.04);
+
+  /* Текст */
+  --text-main: #2B1E12;
+  --text-muted: #706555;
+
+  /* Акценты - более мягкие */
+  --accent-orange: #DB7A36;
+  --accent-orange-light: #F7C299;
+  --accent-purple: #7E45C0;
+  --accent-purple-light: #E4D5FF;
+
+  /* Вкладки */
+  --tab-gray: #E7E0D4;
+  --tab-gray-text: #2B1E12;
+
+  /* Кнопки */
+  --btn-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+
+  /* Старые переменные для обратной совместимости */
+  --bg-paper-main: #F7F3EC;
+  --border-light: #E4DDCF;
+  --shadow-soft: rgba(0, 0, 0, 0.04);
+  --footer-bg: #F5F2EB;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'PT Sans', sans-serif;
+  background-color: var(--bg-desk);
+  background-image:
+    radial-gradient(circle at 20% 50%, rgba(0, 0, 0, 0.02) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(0, 0, 0, 0.02) 0%, transparent 50%);
+  color: var(--text-main);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'PT Serif', serif;
+  line-height: 1.15;
+  font-weight: 400;
+}
+
+button {
+  font-family: 'PT Sans', sans-serif;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+input, textarea, select {
+  font-family: 'PT Sans', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 16px;
+  }
+}

@@ -1,0 +1,275 @@
+.course-new-content {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.course-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+}
+
+.course-intro {
+  font-size: 17px;
+  color: var(--text-main);
+  line-height: 1.6;
+  margin-bottom: 36px;
+  font-weight: 500;
+}
+
+.course-benefits {
+  background: linear-gradient(135deg, rgba(126, 69, 192, 0.06), rgba(126, 69, 192, 0.03));
+  padding: 28px 32px;
+  border-radius: 16px;
+  border-left: 4px solid var(--accent-purple);
+}
+
+.benefits-title {
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 20px;
+  color: var(--text-main);
+}
+
+.benefits-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.benefit-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.benefit-arrow {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  background: var(--accent-purple);
+  color: white;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.benefit-text {
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--text-main);
+  padding-top: 4px;
+}
+
+.topics-title {
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 20px;
+  color: var(--text-main);
+}
+
+.topics-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.topic-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 20px;
+  background: white;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+.topic-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.topic-card:hover {
+  background: linear-gradient(135deg, rgba(249, 245, 255, 1), rgba(240, 231, 255, 1));
+  border-color: rgba(126, 69, 192, 0.2);
+  box-shadow: 0 4px 14px rgba(126, 69, 192, 0.12);
+}
+
+.topic-number {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--accent-purple), #8B52CF);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.topic-content {
+  flex: 1;
+  position: relative;
+}
+
+.topic-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-main);
+  line-height: 1.4;
+}
+
+.topic-help {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid var(--accent-purple);
+  color: var(--accent-purple);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 13px;
+  opacity: 0;
+  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.topic-card:hover .topic-help {
+  opacity: 1;
+}
+
+.topic-tooltip {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin-top: 10px;
+  padding: 14px 16px;
+  background: var(--accent-purple);
+  color: white;
+  border-radius: 12px;
+  font-size: 13px;
+  line-height: 1.5;
+  z-index: 10;
+  box-shadow: 0 6px 20px rgba(126, 69, 192, 0.3);
+  animation: tooltipSlideIn 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes tooltipSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.topic-tooltip::before {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 24px;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid var(--accent-purple);
+}
+
+.course-form-section {
+  margin-top: 8px;
+}
+
+.course-form-card {
+  background: linear-gradient(135deg, rgba(249, 245, 255, 1), rgba(240, 231, 255, 1));
+  border: 1px solid rgba(126, 69, 192, 0.2);
+  border-radius: 20px;
+  padding: 36px 40px;
+  box-shadow: 0 8px 24px rgba(126, 69, 192, 0.12);
+}
+
+.course-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.form-hint {
+  display: block;
+  margin-top: 6px;
+  font-size: 12px;
+  color: var(--text-muted);
+  font-family: 'PT Sans Caption', sans-serif;
+  font-style: italic;
+}
+
+.course-form .form-submit {
+  background: linear-gradient(135deg, var(--accent-purple), #8B52CF);
+  box-shadow: 0 4px 12px rgba(126, 69, 192, 0.2);
+}
+
+.course-form .form-submit:hover {
+  box-shadow: var(--btn-shadow);
+}
+
+.course-form .form-input:focus,
+.course-form .form-input:not(:placeholder-shown) {
+  border-bottom-color: var(--accent-purple);
+}
+
+.course-form .form-input:focus + .form-label,
+.course-form .form-input:not(:placeholder-shown) + .form-label {
+  color: var(--accent-purple);
+}
+
+@media (max-width: 1024px) {
+  .course-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .course-new-content {
+    gap: 36px;
+  }
+
+  .course-form-card {
+    padding: 28px 24px;
+  }
+
+  .course-benefits {
+    padding: 24px 20px;
+  }
+
+  .topic-tooltip {
+    position: fixed;
+    left: 20px;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}

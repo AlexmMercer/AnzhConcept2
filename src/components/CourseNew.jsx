@@ -106,11 +106,11 @@ const CourseNew = () => {
 
         <div className="course-right">
           <h3 className="topics-title">Программа курса</h3>
-          <div className="topics-list">
+          <div className={`topics-list ${tooltipTopic !== null ? 'has-active-tooltip' : ''}`}>
             {topics.map((topic, index) => (
               <div
                 key={index}
-                className={`topic-card ${visibleTopics.includes(index) ? 'visible' : ''}`}
+                className={`topic-card ${visibleTopics.includes(index) ? 'visible' : ''} ${tooltipTopic === index ? 'active' : ''} ${tooltipTopic !== null && tooltipTopic !== index ? 'dimmed' : ''}`}
                 onMouseEnter={() => setTooltipTopic(index)}
                 onMouseLeave={() => setTooltipTopic(null)}
               >
